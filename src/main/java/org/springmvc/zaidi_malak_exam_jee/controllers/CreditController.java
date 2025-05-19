@@ -6,19 +6,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springmvc.zaidi_malak_exam_jee.dtos.CreditDTO;
 import org.springmvc.zaidi_malak_exam_jee.services.CreditService;
-
 import java.util.List;
-
 @RestController
 @RequestMapping("/api/credits")
 public class CreditController {
-
     private final CreditService creditService;
-
     public CreditController(CreditService creditService) {
         this.creditService = creditService;
     }
-
     @PostMapping
     @Operation(summary = "Créer un nouveau crédit")
     public ResponseEntity<CreditDTO> createCredit(@RequestBody CreditDTO creditDTO) {
