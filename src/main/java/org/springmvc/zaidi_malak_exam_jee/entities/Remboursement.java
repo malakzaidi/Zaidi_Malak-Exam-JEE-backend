@@ -2,9 +2,14 @@ package org.springmvc.zaidi_malak_exam_jee.entities;
 
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDate;
 
 @Entity
+@Getter
+@Setter
 public class Remboursement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,15 +22,4 @@ public class Remboursement {
     @JoinColumn(name = "credit_id")
     private Credit credit;
 
-    // Getters and Setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-    public LocalDate getDate() { return date; }
-    public void setDate(LocalDate date) { this.date = date; }
-    public Double getMontant() { return montant; }
-    public void setMontant(Double montant) { this.montant = montant; }
-    public String getType() { return type; }
-    public void setType(String type) { this.type = type; }
-    public Credit getCredit() { return credit; }
-    public void setCredit(Credit credit) { this.credit = credit; }
 }
